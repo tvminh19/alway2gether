@@ -16,7 +16,7 @@ class Game:
         # create external pygame window
         WINDOW_SIZE = (640, 480)
         self.screen = pygame.display.set_mode(WINDOW_SIZE, pygame.RESIZABLE)
-        pygame.display.set_caption("Magma Boy and Hydro Girl")
+        pygame.display.set_caption("Water Girl and Fire Boy")
 
         # create internal pygame window
         CHUNK_SIZE = 16
@@ -360,7 +360,8 @@ class Game:
                 is_killed = self.collision_test(
                     player.rect, board.get_water_pools())
             # see if either collide with goo
-            is_killed += self.collision_test(player.rect, board.get_goo_pools())
+            is_killed += self.collision_test(player.rect,
+                                             board.get_goo_pools())
 
             # if the is_killed list is longer than 0, kill player
             if is_killed:

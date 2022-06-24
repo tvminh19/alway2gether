@@ -20,7 +20,8 @@ class Gates:
         """
         # load gate image and make transparent
         self.gate_image = pygame.image.load('data/gates_and_plates/gate.png')
-        self.gate_image.set_colorkey((255, 0, 255))
+        # self.gate_image.set_colorkey((255, 0, 255))
+        self.gate_image = pygame.transform.scale(self.gate_image, (16, 48))
         # load plate image and make transparent
         self.plate_image = pygame.image.load('data/gates_and_plates/plate.png')
         self.plate_image.set_colorkey((255, 0, 255))

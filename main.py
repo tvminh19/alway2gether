@@ -1,5 +1,5 @@
 """
-Main file for Magma Boy and Hydro Girl game.
+Main file for Water Girl and Fire Boy game.
 """
 
 # import pygame and orther needed libraries

@@ -23,8 +23,7 @@ class LevelSelect():
         }
         # set each entry in dictionary to have clear bacgkround
         for title in self.titles.keys():
-            self.titles[title].set_colorkey((255, 0, 255))
-
+            self.titles[title] = pygame.transform.scale(self.titles[title], (96, 15))
         # indicator to show which level is currently selected
         self.indicator_image = pygame.image.load('data/screens/indicator.png')
         self.indicator_image.set_colorkey((255, 0, 255))
