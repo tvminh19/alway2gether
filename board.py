@@ -10,7 +10,6 @@ class Board:
             path::str
                 A path to a text file containing block placements
         """
-        self.CHUNK_SIZE = 16
         self.load_map(path)
         self.load_images()
         self.make_solid_blocks()
@@ -53,19 +52,10 @@ class Board:
         self._background = pygame.image.load('data/board_textures/wall.png')
         # create dictionary that maps a string to a board texture
         self._board_textures = {
-            "100": pygame.image.load('data/board_textures/100.png'),
-            "100": pygame.image.load('data/board_textures/100.png'),
-            "111": pygame.image.load('data/board_textures/111.png'),
-            "112": pygame.image.load('data/board_textures/112.png'),
-            "113": pygame.image.load('data/board_textures/113.png'),
-            "114": pygame.image.load('data/board_textures/114.png'),
-            "121": pygame.image.load('data/board_textures/121.png'),
-            "122": pygame.image.load('data/board_textures/122.png'),
-            "123": pygame.image.load('data/board_textures/123.png'),
-            "124": pygame.image.load('data/board_textures/124.png'),
-            "2": pygame.image.load('data/board_textures/lava.png'),
-            "3": pygame.image.load('data/board_textures/water.png'),
-            "4": pygame.image.load('data/board_textures/goo.png')
+            "1": pygame.image.load('data/environment/castleCenter.png'),
+            "2": pygame.image.load('data/environment/fire.png'),
+            "3": pygame.image.load('data/environment/water.png'),
+            "4": pygame.image.load('data/environment/acid.png'),
         }
         # set the colorkey for each image in dictionary
         for texture in self._board_textures.keys():
@@ -89,7 +79,6 @@ class Board:
         which the player can collide with.
         """
         # create empty list to contain solid block rects
-        CHUNKS_SIZE = 16
         self._solid_blocks = []
         for y, row in enumerate(self._game_map):
             for x, tile in enumerate(row):
